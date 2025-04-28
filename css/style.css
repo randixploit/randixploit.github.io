@@ -1,6 +1,6 @@
 .jumbotron{
     padding-top: 5rem;
-    background-color: rgb(5, 24, 1);
+    background-color: rgb(1, 20, 29);
 } 
 
 a {
@@ -9,4 +9,41 @@ a {
 
 a:hover {
     color: #6c757d
+}
+
+.terminal {
+    background-color: rgb(0, 5, 10);
+    border: 2px solid var(--neon-blue);
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    overflow: hidden;
+    color: white
+}
+
+.terminal-header {
+    height: 30px;
+    background: rgb(18, 0, 0);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-dot.red { background-color: #ff5f56; }
+.terminal-dot.yellow { background-color: #ffbd2e; }
+.terminal-dot.green { background-color: #27c93f; }
+
+.terminal-body {
+    padding: 20px;
 }
