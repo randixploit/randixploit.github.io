@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EBOOKR dorKING</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { background: #0b0f0a; color: #dfffe0; font-family: ui-monospace, monospace; }
+    .dork-item { transition: transform .15s ease, box-shadow .15s ease; }
+    .dork-item:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
+    code.dork-code { display:block; white-space:pre-wrap; word-break:break-word; }
+  </style>
+</head>
+<body class="p-6">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold mb-4 text-center">EBOOKR — dorKING</h1>
+    <p class="mb-4 text-sm text-green-300 text-center">GUNAKAN TOOLS INI DENGAN BIJAK.<br>Tools ini di rancang untuk membantu para Bug Hunter dalam proses Information Gathering, PII Exposure dan lainnya</p>
+
+    <div class="mb-6">
+      <input id="domainInput" type="text" placeholder="contoh: example.com atau sub.domain.id" 
+             class="w-full p-3 bg-black bg-opacity-50 border border-green-500 rounded text-green-200"
+             autocomplete="off">
+    </div>
+    <div id="dorkList" class="space-y-4">
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find File Config <span class="text-xs text-red-500">High</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com (ext:db OR ext:xml OR ext:pdf OR ext:xls OR ext:ini OR ext:conf OR ext:cnf OR ext:reg OR ext:inf OR ext:rdp OR ext:cfg OR ext:txt OR ext:ora OR ext:json OR ext:yml OR ext:yaml OR ext:cgi OR ext:config) ("DB_CONNECT" OR "DB_PASS" OR "DB_HOST" OR "DB_USER" OR "APP_KEY" OR "REDIS_HOST" AND "REDIS_PASS" OR "REDIS_PORT" OR "MAILER_HOST" OR "MAILER_USER" OR "MAILER_PASS" OR "AWS_SECRET_ACCESS_KEY" OR "JWT_SECRET" OR "RABBIT_MQ_HOST" OR "RABBIT_MQ_USER" OR "RABBIT_MQ_PWD" OR "KEY_SECRET" OR "VIMEO_ALT_SECRET" OR "NEWEB_PAY_HASHKEY" OR "NEWEB_PAY_HASHIV" OR "FIREBASE_SERVER_KEY" OR "PRIVATE_KEY" OR "STRIPE_WEBHOOK_SECRET" OR "API_KEY" OR "AWS_SECRET" OR "DB_API_HOST" OR "DB_COMMON_HOST" OR "DB_TM_HOST" OR "PUSHER_SECRET" OR "VITE_PUSHER_APP_KEY" OR "OPENAI_API_KEY" OR "SMSMISR_PASSWORD" OR "SMSMISR_USERNAME" OR "WATI_AUTHORIZATION" OR "GOOGLE_MAPS_API_KEY" OR "BANK_KEY" OR "DB_PASSWORD" OR "REDIS_PASSWORD" OR "MAIL_HOST" OR "MAIL_PASSWORD" OR "MAIL_PASS" OR "resources.db.params.password" OR "ncanal.aliyun.accessKey" OR "ncanal.aliyun.secretKey" OR "AWSEBDockerrunVersion" OR "aws_access_key_id")'>
+site:example.com (ext:db OR ext:xml OR ext:pdf OR ext:xls OR ext:ini OR ext:conf OR ext:cnf OR ext:reg OR ext:inf OR ext:rdp OR ext:cfg OR ext:txt OR ext:ora OR ext:json OR ext:yml OR ext:yaml OR ext:cgi OR ext:config) ("DB_CONNECT" OR "DB_PASS" OR "DB_HOST" OR "DB_USER" OR "APP_KEY" OR "REDIS_HOST" AND "REDIS_PASS" OR "REDIS_PORT" OR "MAILER_HOST" OR "MAILER_USER" OR "MAILER_PASS" OR "AWS_SECRET_ACCESS_KEY" OR "JWT_SECRET" OR "RABBIT_MQ_HOST" OR "RABBIT_MQ_USER" OR "RABBIT_MQ_PWD" OR "KEY_SECRET" OR "VIMEO_ALT_SECRET" OR "NEWEB_PAY_HASHKEY" OR "NEWEB_PAY_HASHIV" OR "FIREBASE_SERVER_KEY" OR "PRIVATE_KEY" OR "STRIPE_WEBHOOK_SECRET" OR "API_KEY" OR "AWS_SECRET" OR "DB_API_HOST" OR "DB_COMMON_HOST" OR "DB_TM_HOST" OR "PUSHER_SECRET" OR "VITE_PUSHER_APP_KEY" OR "OPENAI_API_KEY" OR "SMSMISR_PASSWORD" OR "SMSMISR_USERNAME" OR "WATI_AUTHORIZATION" OR "GOOGLE_MAPS_API_KEY" OR "BANK_KEY" OR "DB_PASSWORD" OR "REDIS_PASSWORD" OR "MAIL_HOST" OR "MAIL_PASSWORD" OR "MAIL_PASS" OR "resources.db.params.password" OR "ncanal.aliyun.accessKey" OR "ncanal.aliyun.secretKey" OR "AWSEBDockerrunVersion" OR "aws_access_key_id")
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find Private Keys <span class="text-xs text-red-500">High</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com (ext:key OR ext:cer OR ext:crt OR ext:pem) ("PRIVATE KEY" OR "PRIVATE_ENCRYPT")'>
+site:example.com (ext:key OR ext:cer OR ext:crt OR ext:pem) ("PRIVATE KEY" OR "PRIVATE_ENCRYPT")
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find Debug Logs <span class="text-xs text-yellow-300">Medium</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com filetype:log ("debug" AND "error")'>
+site:example.comfiletype:log ("debug" AND "error")
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find PII Exposure (INDO) <span class="text-xs text-red-600">Critical</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com (ext:pdf OR ext:xls OR ext:xlsx OR ext:doc OR ext:docx OR ext:txt) ("NIK" OR "NIP" AND "NAMA" OR "NAME" AND "TELEPON" OR "NO HP" OR "PHONE")'>
+site:example.com (ext:pdf OR ext:xls OR ext:xlsx OR ext:doc OR ext:docx OR ext:txt) ("NIK" OR "NIP" AND "NAMA" OR "NAME" AND "TELEPON" OR "NO HP" OR "PHONE")
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find Credentials Exposure (INDO) <span class="text-xs text-red-600">Critical</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com (ext:pdf OR ext:xls OR ext:xlsx OR ext:doc OR site:docx OR ext:txt) ("username" OR "nama pengguna" OR "email" OR "e-mail" OR "surel" AND "password" OR "kata sandi")'>
+site:example.com (ext:pdf OR ext:xls OR ext:xlsx OR ext:doc OR site:docx OR ext:txt) ("username" OR "nama pengguna" OR "email" OR "e-mail" OR "surel" AND "password" OR "kata sandi")
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find Directory Listing <span class="text-xs text-white">Informative</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com intitle:"Index of /" intext:"parent directory"'>
+site:example.com intitle:"Index of /" intext:"parent directory"
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find Git Exposure <span class="text-xs text-yellow-300">Medium</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com intitle:"Index of /.git" ("parent directory" AND "HEAD" OR "FETCH_HEAD")'>
+site:example.com intitle:"Index of /.git" ("parent directory" AND "HEAD" OR "FETCH_HEAD")
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find Backup Directory <span class="text-xs text-red-500">High</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com (intitle:"Index of /backup" OR intitle:"Index of /database" OR intitle:"/v2" OR intitle:"Index of /cadangan" OR intitle:"Index of /arsip" OR intitle:"Index of /archive") ("parent directory" AND ".sql" OR ".zip" OR ".gz" OR ".log" OR ".tar" OR ".bak")'>
+site:example.com (intitle:"Index of /backup" OR intitle:"Index of /database" OR intitle:"/v2" OR intitle:"Index of /cadangan" OR intitle:"Index of /arsip" OR intitle:"Index of /archive") ("parent directory" AND ".sql" OR ".zip" OR ".gz" OR ".log")
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find MySQL Error Messages <span class="text-xs text-green-150">Low</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com ("Warning:" AND "mysql_fetch_array" OR "mysql_num_rows" OR "MySQL result index" OR "MySQL server version" OR "MySQL Syntax error" OR "mysql_" OR "on MySQL result" OR "You have an error in your SQL syntax" OR "valid MySQL result" OR "SQL command not properly ended" OR "incorrect syntax near" OR "syntax error at or near" OR "unexpected token" OR "SQL statement not ended properly" OR "SQL query failed" OR "Division by zero" OR "Unclosed quotation mark")'>
+site:example.com ("Warning:" AND "mysql_fetch_array" OR "mysql_num_rows" OR "MySQL result index" OR "MySQL server version" OR "MySQL Syntax error" OR "mysql_" OR "on MySQL result" OR "You have an error in your SQL syntax" OR "valid MySQL result" OR "SQL command not properly ended" OR "incorrect syntax near" OR "syntax error at or near" OR "unexpected token" OR "SQL statement not ended properly" OR "SQL query failed" OR "Division by zero" OR "Unclosed quotation mark")
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find PostgreSQL Error Messages <span class="text-xs text-green-150">Low</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com ("Warning:" AND "pg_connect()" OR "pg_exec()" OR "pg_pconnect()")'>
+site:example.com ("Warning:" AND "pg_connect()" OR "pg_exec()" OR "pg_pconnect()")
+            </code>
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find MicrosoftSQL Error Messages <span class="text-xs text-green-150">Low</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com ("Warning:" AND "Microsoft SQL Server" OR "ODBC SQL Server Driver" OR "SQLServer JDBC Driver" OR "System.Data.SqlClient.SqlException" OR "Unclosed quotation mark" OR "SQLServer Exception")'>
+site:example.com ("Warning:" AND "Microsoft SQL Server" OR "ODBC SQL Server Driver" OR "SQLServer JDBC Driver" OR "System.Data.SqlClient.SqlException" OR "Unclosed quotation mark" OR "SQLServer Exception")
+            </code>
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find SQLite Error Messages <span class="text-xs text-green-150">Low</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com ("Warning:" AND "SQLite/JDBCDriver" OR "SQLite.Exception" OR "System.Data.SQLite.SQLiteException" OR "System.Data.SqlClient.SqlException" OR "SQLite error")'>
+site:example.com ("Warning:" AND "SQLite/JDBCDriver" OR "SQLite.Exception" OR "System.Data.SQLite.SQLiteException" OR "System.Data.SqlClient.SqlException" OR "SQLite error")
+            </code>
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find Email Discoverty <span class="text-xs text-white">Informative</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com intext:"@example.com"'>
+site:example.com intext:"@example.com"
+            </code>
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find Form Upload <span class="text-xs text-white">Informative</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com ("choose file" OR "pilih file")'>
+site:example.com ("choose file" OR "pilih file")
+            </code>
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find Path Traversal / LFI Parameters <span class="text-xs text-red-500">High</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com (inurl:"file=" OR inurl:"document=" OR inurl:"folder=" OR inurl:"root=" OR inurl:"path=" OR inurl:"pg=" OR inurl:"pdf=" OR inurl:"template=" OR inurl:"php_path" OR inurl:"doc=" OR inurl:"page=" OR inurl:"cat=" OR inurl:"dir=" OR inurl:"board=" OR inurl:" detail=" OR inurl:"download=" OR inurl:"prefix=" OR inurl:"include=" OR inurl:"inc=" OR inurl:"locate=" OR inurl:"show" OR inurl:"site=" OR inurl:"view=" OR inurl:"content=" OR inurl:"url=")'>
+site:example.com (inurl:"file=" OR inurl:"document=" OR inurl:"folder=" OR inurl:"root=" OR inurl:"path=" OR inurl:"pg=" OR inurl:"pdf=" OR inurl:"template=" OR inurl:"php_path" OR inurl:"doc=" OR inurl:"page=" OR inurl:"cat=" OR inurl:"dir=" OR inurl:"board=" OR inurl:" detail=" OR inurl:"download=" OR inurl:"prefix=" OR inurl:"include=" OR inurl:"inc=" OR inurl:"locate=" OR inurl:"show" OR inurl:"site=" OR inurl:"view=" OR inurl:"content=" OR inurl:"url=")
+            </code>
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find Open Redirect Parameters <span class="text-xs text-green-150">Low</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com (inurl:"open=" OR inurl:"callback=" OR inurl:"returnurl=" OR inurl:"continue=" OR inurl:"checkout=" OR inurl:"checkout_url=" OR inurl:"data=" OR inurl:"dest=" OR inurl:"destination=" OR inurl:"dir=" OR inurl:"domain=" OR inurl:"file=" OR inurl:"file_name=" OR inurl:"file_url=" OR inurl:"folder=" OR inurl:"folder_url=" OR inurl:"from_url=" OR inurl:"go=" OR inurl:"goto=" OR inurl:"host=" OR inurl:"to=" OR inurl:"after=" OR inurl:"logout=" OR inurl:"next=" OR inurl:"out=" OR inurl:"path=" OR inurl:"redir=" OR inurl:"redirect=" OR inurl:"redirect_to=" OR inurl:"redirect_uri=" OR inurl:"redirect_url=" OR inurl:"return=" OR inurl:"return_url=" OR inurl:"returnto=" OR inurl:"return_path=" OR inurl:"return_url=" OR inurl:"rt=" OR inurl:"target=" OR inurl:"window=" OR inurl:"success=" OR inurl:"url=")'>
+site:example.com (inurl:"open=" OR inurl:"callback=" OR inurl:"returnurl=" OR inurl:"continue=" OR inurl:"checkout=" OR inurl:"checkout_url=" OR inurl:"data=" OR inurl:"dest=" OR inurl:"destination=" OR inurl:"dir=" OR inurl:"domain=" OR inurl:"file=" OR inurl:"file_name=" OR inurl:"file_url=" OR inurl:"folder=" OR inurl:"folder_url=" OR inurl:"from_url=" OR inurl:"go=" OR inurl:"goto=" OR inurl:"host=" OR inurl:"to=" OR inurl:"after=" OR inurl:"logout=" OR inurl:"next=" OR inurl:"out=" OR inurl:"path=" OR inurl:"redir=" OR inurl:"redirect=" OR inurl:"redirect_to=" OR inurl:"redirect_uri=" OR inurl:"redirect_url=" OR inurl:"return=" OR inurl:"return_url=" OR inurl:"returnto=" OR inurl:"return_path=" OR inurl:"return_url=" OR inurl:"rt=" OR inurl:"target=" OR inurl:"window=" OR inurl:"success=" OR inurl:"url=")
+            </code>
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find SQL Injection Parameters <span class="text-xs text-red-500">High</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com (inurl:"id=" OR inurl:"cid=" OR inurl:"pid=" OR inurl:"page=" OR inurl:"users=" OR inurl:"user=" OR inurl:"dir=" OR inurl:"reset=" OR inurl:"reset_password=" OR inurl:"category=" OR inurl:"class=" OR inurl:"news=" OR inurl:"item=" OR inurl:"menu=" OR inurl:"select=" OR inurl:"sel=" OR inurl:"report=" OR inurl:"update=" OR inurl:"query=" OR inurl:"q=" OR inurl:"name=" OR inurl:"where=" OR inurl:"search=" OR inurl:"params=" OR inurl:"process=" OR inurl:"row=" OR inurl:"view=" OR inurl:"table=" OR inurl:"from=" OR inurl:"results=" OR inurl:"sleep=" OR inurl:"fetch=" OR inurl:"order=" OR inurl:"keyword=" OR inurl:"column=" OR inurl:"field=" OR inurl:"delete=" OR inurl:"string=" OR inurl:"number=" OR inurl:"filter=" OR inurl:"title=" OR inurl:"time=" OR inurl:"topic=" OR inurl:"thread=" OR inurl:"type=" OR inurl:"date=" OR inurl:"orm=" OR inurl:"join=" OR inurl:"main=" OR inurl:"region=")'>
+site:example.com (inurl:"id=" OR inurl:"cid=" OR inurl:"pid=" OR inurl:"page=" OR inurl:"users=" OR inurl:"user=" OR inurl:"dir=" OR inurl:"reset=" OR inurl:"reset_password=" OR inurl:"category=" OR inurl:"class=" OR inurl:"news=" OR inurl:"item=" OR inurl:"menu=" OR inurl:"select=" OR inurl:"sel=" OR inurl:"report=" OR inurl:"update=" OR inurl:"query=" OR inurl:"q=" OR inurl:"name=" OR inurl:"where=" OR inurl:"search=" OR inurl:"params=" OR inurl:"process=" OR inurl:"row=" OR inurl:"view=" OR inurl:"table=" OR inurl:"from=" OR inurl:"results=" OR inurl:"sleep=" OR inurl:"fetch=" OR inurl:"order=" OR inurl:"keyword=" OR inurl:"column=" OR inurl:"field=" OR inurl:"delete=" OR inurl:"string=" OR inurl:"number=" OR inurl:"filter=" OR inurl:"title=" OR inurl:"time=" OR inurl:"topic=" OR inurl:"thread=" OR inurl:"type=" OR inurl:"date=" OR inurl:"orm=" OR inurl:"join=" OR inurl:"main=" OR inurl:"region=")
+            </code>
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find XSS Parameters <span class="text-xs text-yellow-300">Medium</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com (inurl:"q=" OR inurl:"s=" OR inurl:"search=" OR inurl:"lang=" OR inurl:"keyword=" OR inurl:"query=" OR inurl:"page=" OR inurl:"keywords=" OR inurl:"year=" OR inurl:"view=" OR inurl:"email=" OR inurl:"type=" OR inurl:"name=" OR inurl:"p=" OR inurl:"callback=" OR inurl:"jsonp=" OR inurl:"api_key=" OR inurl:"api=" OR inurl:"password=" OR inurl:"emailto=" OR inurl:"token=" OR inurl:"username=" OR inurl:"csrf_token=" OR inurl:"unsubscribe_token=" OR inurl:"id=" OR inurl:"item=" OR inurl:"page_id=" OR inurl:"month=" OR inurl:"immagine=" OR inurl:"list_type=" OR inurl:"url=" OR inurl:"terms=" OR inurl:"categoryid=" OR inurl:"key=" OR inurl:"l=" OR inurl:"begindate=" OR inurl:"enddate=")'>
+site:example.com (inurl:"q=" OR inurl:"s=" OR inurl:"search=" OR inurl:"lang=" OR inurl:"keyword=" OR inurl:"query=" OR inurl:"page=" OR inurl:"keywords=" OR inurl:"year=" OR inurl:"view=" OR inurl:"email=" OR inurl:"type=" OR inurl:"name=" OR inurl:"p=" OR inurl:"callback=" OR inurl:"jsonp=" OR inurl:"api_key=" OR inurl:"api=" OR inurl:"password=" OR inurl:"emailto=" OR inurl:"token=" OR inurl:"username=" OR inurl:"csrf_token=" OR inurl:"unsubscribe_token=" OR inurl:"id=" OR inurl:"item=" OR inurl:"page_id=" OR inurl:"month=" OR inurl:"immagine=" OR inurl:"list_type=" OR inurl:"url=" OR inurl:"terms=" OR inurl:"categoryid=" OR inurl:"key=" OR inurl:"l=" OR inurl:"begindate=" OR inurl:"enddate=")
+            </code>
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find Unauthorized User with CRUD Access on Google Drive/Docs Links <span class="text-xs text-yellow-300">Medium</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com ("drive.google.com/drive/" OR "docs.google.com/spreadsheets/")'>
+site:example.com ("drive.google.com/drive/" OR "docs.google.com/spreadsheets/")
+            </code>
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dork-item bg-gray-900 p-4 rounded-lg">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="font-semibold text-green-300">Find phpinfo() <span class="text-xs text-low-150">Low</span></div>
+            <code class="dork-code text-sm text-green-400" data-original='site:example.com (intitle:"phpinfo()" OR intitle:"PHP Version") ("System" AND "Build Date" AND "Configure" AND "Command" AND "PHP Extension") ext:php'>
+site:example.com (intitle:"phpinfo()" OR intitle:"PHP Version") ("System" AND "Build Date" AND "Configure" AND "Command" AND "PHP Extension") ext:php
+            </code>
+            </code>
+          </div>
+          <div class="ml-3 text-sm space-y-1">
+            <button class="btn-search px-2 py-1 rounded bg-green-700 text-black text-xs">Search</button>
+            <button class="btn-copy px-2 py-1 rounded border border-green-600 text-xs">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- tambahin dork-item lain di sini jika perlu -->
+    </div>
+  </div>
+  <br><br>
+  <div class="section">
+      <center>
+          <img src="https://raw.githubusercontent.com/randixploit/ebook/refs/heads/main/20250816_221701.jpg" alt="logo" width="150">
+          <h2 class="section-title"><span class="tele">Telegram</span>: <a href="https://randixploit1337.t.me" target="_blank"><span class="ig">@randixploit1337</span></a></h2>
+          <span size="3">Buy eBook: <a href="https://lynk.com/randiansyah" target="_blank"><span class="url">https://lynk.com/randiansyah</span></a></span>
+      </center>
+  </div>
+
+  <script>
+    // ambil semua elemen kode yang punya data-original
+    const codes = Array.from(document.querySelectorAll('code.dork-code'));
+    const input = document.getElementById('domainInput');
+
+    // normalkan dork
+    function normalizeDomain(raw) {
+      if (!raw) return 'example.com';
+      let d = raw.trim();
+      // buang leading @ kalau ada
+      if (d.startsWith('@')) d = d.slice(1);
+      // kalau user memasukkan protocol, hapus (http(s)://)
+      d = d.replace(/^https?:\/\//i, '');
+      // buang trailing slashes
+      d = d.replace(/\/+$/,'');
+      return d || 'example.com';
+    }
+
+    // render
+    function renderDorks(domain) {
+      const target = normalizeDomain(domain);
+
+      codes.forEach(code => {
+        const template = code.getAttribute('data-original');
+
+        let updated = template.replace(/site:example\.com/ig, 'site:' + target);
+
+        updated = updated.replace(/@example\.com/ig, '@' + target);
+
+        updated = updated.replace(/example\.com/ig, target);
+        
+        updated = updated.replace(new RegExp('site:' + target + '(?=filetype:)', 'ig'), 'site:' + target + ' ');
+        
+        code.textContent = updated;
+      });
+    }
+
+    // live update dork
+    input.addEventListener('input', (e) => {
+      renderDorks(e.target.value);
+    });
+
+    // new tab google
+    document.querySelectorAll('.btn-search').forEach((btn, idx) => {
+      btn.addEventListener('click', (ev) => {
+        const code = codes[idx].textContent.trim();
+        const q = encodeURIComponent(code);
+        window.open('https://www.google.com/search?q=' + q, '_blank');
+      });
+    });
+
+    // buat copy
+    document.querySelectorAll('.btn-copy').forEach((btn, idx) => {
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(codes[idx].textContent.trim());
+          btn.textContent = 'Copied ✓';
+          setTimeout(()=> btn.textContent = 'Copy', 1000);
+        } catch (err) {
+          alert('Gagal copy: ' + err);
+        }
+      });
+    });
+
+    // jalanin function
+    renderDorks('');
+  </script>
+
+</body>
+</html>
