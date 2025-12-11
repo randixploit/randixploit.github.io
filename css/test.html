@@ -12,7 +12,7 @@
    
 	<script>
 		window.onblur = function() {
-			document.getElementById("iframe").src = "javascript:alert(document.cookie);";
+			document.getElementById("iframe").src = "javascript:alert('xss by randixploit');";
 		}
 	</script>
 </head>
