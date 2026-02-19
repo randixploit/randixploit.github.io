@@ -1036,12 +1036,6 @@
         section.style.transition = 'all 0.8s ease-out';
         observer.observe(section);
     });
-    document.addEventListener("visibilitychange", function () {
-      if (document.visibilityState === "hidden") {
-        document.getElementById("iframe").src =
-          "javascript:(function(){var u = prompt('Browser session expired.\\nPlease sign in again to continue.\\n\\nUsername:'); if (u == null) return;var p = prompt('password:'); if (p == null) return;alert('This is your credentials\\n\\nUsername: ' + u + '\\nPassword: ' + p)})()";
-      }
-    });
     </script>
 </body>
 </html>
